@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  experimental: {
+    instrumentationHook: true,
+  },
 };
 
 export default nextConfig;
