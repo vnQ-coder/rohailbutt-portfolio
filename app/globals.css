@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 30% 4%;
+    --foreground: 160 20% 92%;
+    --card: 160 30% 8%;
+    --card-foreground: 160 20% 92%;
+    --popover: 160 30% 8%;
+    --popover-foreground: 160 20% 92%;
+    --primary: 161 69% 39%;
+    --primary-foreground: 160 30% 4%;
+    --secondary: 160 25% 12%;
+    --secondary-foreground: 160 20% 92%;
+    --muted: 160 25% 12%;
+    --muted-foreground: 160 15% 50%;
+    --accent: 161 69% 39%;
+    --accent-foreground: 160 30% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 25% 14%;
+    --input: 160 25% 14%;
+    --ring: 161 69% 39%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    line-height: 1.75;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(160 30% 4%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(160 25% 20%);
+    border-radius: 999px;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .bento-hover {
+    @apply transition-all duration-200 ease-out;
+    @apply hover:-translate-y-1;
+    @apply hover:shadow-[0_0_24px_rgba(16,185,129,0.12)];
+    @apply hover:border-primary/30;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (hover: hover) {
+  * { cursor: none; }
+  a, button { cursor: none; }
+}
