@@ -28,7 +28,7 @@ export function Footer() {
       <div className="flex items-center justify-between flex-wrap gap-3 px-6 lg:px-8 py-5">
         <span className="font-mono text-muted-foreground text-[0.7rem]">rohailbutt.dev</span>
         <span className="font-mono text-muted-foreground text-[0.7rem]">PKT {time ?? "--:--:--"}</span>
-        <span className="font-mono text-muted-foreground text-[0.7rem]">built with Next.js</span>
+
       </div>
     </footer>
   );
