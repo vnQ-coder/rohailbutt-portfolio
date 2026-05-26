@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const schema = z.object({
   name: z.string().min(1).max(100),
   email: z.string().email(),
@@ -11,6 +9,7 @@ const schema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const body = await req.json();
   const parsed = schema.safeParse(body);
 
