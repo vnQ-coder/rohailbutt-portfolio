@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 export function AvailabilityCard() {
   return (
-    <Card className="col-span-12 sm:col-span-6 lg:col-span-3 bento-hover border-border bg-card">
+    <Card className="bento-hover border-border bg-card h-full">
       <CardContent className="flex flex-col justify-between gap-4 p-6 h-full">
         <div>
           <p className="font-mono text-primary text-[0.65rem] uppercase tracking-widest mb-3">

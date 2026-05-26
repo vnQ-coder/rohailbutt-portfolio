@@ -79,6 +79,11 @@
   50% { opacity: 0.45; }
 }
 
+@keyframes heroGlow {
+  from { opacity: 0.05; transform: scale(1) translate(0, 0); }
+  to   { opacity: 0.13; transform: scale(1.25) translate(8px, -8px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

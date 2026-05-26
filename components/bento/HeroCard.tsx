@@ -26,11 +26,17 @@ export function HeroCard() {
 
   return (
     <Card className="col-span-12 lg:col-span-8 border-border bg-card relative overflow-hidden min-h-[360px] group">
-      {/* Ambient glow */}
+      {/* Ambient glow — breathing */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-16 -right-16 w-72 h-72 rounded-full opacity-[0.08] blur-3xl"
-        style={{ background: "hsl(161 69% 39%)" }}
+        className="pointer-events-none absolute -top-16 -right-16 w-96 h-96 rounded-full blur-3xl"
+        style={{ background: "hsl(161 69% 39%)", animation: "heroGlow 5s ease-in-out infinite alternate" }}
+      />
+      {/* Secondary drift glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -left-12 w-64 h-64 rounded-full blur-3xl"
+        style={{ background: "hsl(161 69% 39%)", animation: "heroGlow 7s ease-in-out infinite alternate-reverse" }}
       />
       {/* Subtle grid */}
       <div
@@ -62,8 +68,8 @@ export function HeroCard() {
 
         {/* Headline — value prop first, not name */}
         <h1
-          className="font-display font-extrabold leading-[0.92] tracking-[-0.03em]"
-          style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
+          className="font-display font-bold leading-[0.9] tracking-[-0.035em]"
+          style={{ fontSize: "clamp(2.2rem, 5.2vw, 4.5rem)" }}
         >
             {HEADLINE.map((line, i) => (
             <span key={i} className="block overflow-hidden">

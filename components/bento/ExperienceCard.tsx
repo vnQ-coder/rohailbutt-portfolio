@@ -10,7 +10,7 @@ const EXPERIENCE = [
 
 export function ExperienceCard() {
   return (
-    <Card className="col-span-12 lg:col-span-4 bento-hover border-border bg-card">
+    <Card className="bento-hover border-border bg-card h-full">
       <CardContent className="p-6 lg:p-8">
         <p className="font-mono text-primary text-[0.65rem] uppercase tracking-widest mb-6">Experience</p>
         <div className="flex flex-col gap-4">

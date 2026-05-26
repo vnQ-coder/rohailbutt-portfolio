@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function AboutCard() {
   return (
-    <Card className="col-span-12 lg:col-span-4 bento-hover border-border bg-card">
+    <Card className="bento-hover border-border bg-card h-full">
       <CardContent className="p-6 lg:p-8 flex flex-col gap-4 h-full">
         <p className="font-mono text-primary text-[0.65rem] uppercase tracking-widest">About</p>
         <div className="flex flex-col gap-3">

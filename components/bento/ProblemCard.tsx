@@ -5,12 +5,11 @@ type ProblemCardProps = {
   problem: string;
   result: string;
   metric: string;
-  className?: string;
 };
 
-export function ProblemCard({ domain, problem, result, metric, className = "" }: ProblemCardProps) {
+export function ProblemCard({ domain, problem, result, metric }: ProblemCardProps) {
   return (
-    <Card className={`bento-hover border-border bg-card ${className}`}>
+    <Card className="bento-hover border-border bg-card h-full">
       <CardContent className="flex flex-col gap-3 p-6 h-full justify-between">
         <div className="flex flex-col gap-3">
           <span className="font-mono text-primary text-[0.65rem] uppercase tracking-widest">

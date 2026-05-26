@@ -5,7 +5,7 @@ import type { Project } from "@/lib/projects";
 
 export function FeaturedProjectCard({ project }: { project: Project }) {
   return (
-    <Link href={`/projects/${project.slug}`} className="col-span-12 block group" data-cursor="View Case Study">
+    <Link href={`/projects/${project.slug}`} className="block group h-full" data-cursor="View Case Study">
       <Card className="bento-hover border-border bg-card w-full" style={{ background: "linear-gradient(135deg, hsl(160 30% 8%) 0%, hsl(161 69% 39% / 0.05) 100%)" }}>
         <CardContent className="flex flex-col gap-5 p-6 lg:p-10">
           <div className="flex items-center gap-3">

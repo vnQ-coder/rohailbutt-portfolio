@@ -20,7 +20,7 @@ export function ContactCard() {
   }
 
   return (
-    <section id="contact" className="col-span-12">
+    <section id="contact">
       <Card className="bento-hover border-border bg-card">
         <CardContent className="flex flex-col items-center text-center gap-6 p-8 lg:p-14">
           <p className="font-mono text-primary text-[0.65rem] uppercase tracking-widest">
