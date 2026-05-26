@@ -32,7 +32,7 @@ export const projects: Project[] = [
     subtitle: "Regulated Crypto-Fiat Exchange Infrastructure",
     category: "FinTech",
     description:
-      "Regulated crypto-fiat exchange processing $5M+ monthly via Monoova, Wyre, and Fireblocks — with end-to-end KYC/AML automation and PCI-compliant data handling.",
+      "A crypto startup needed to accept fiat money from customers without violating Australian financial regulations. I built the entire compliance pipeline — KYC/AML, three payment rails, regulatory reporting — from zero. No prior infrastructure.",
     metrics: [
       { value: "$5M+", label: "Monthly Volume" },
       { value: "100%", label: "Payment Test Coverage" },
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     subtitle: "Jira-Style PM Tool with Autonomous Sprint Agent",
     category: "AI / Productivity",
     description:
-      "A Jira-style project management platform with an embedded AI agent that autonomously generates sprint tickets by analysing the linked GitHub codebase and researching project context.",
+      "Engineering teams were spending hours updating Jira instead of shipping. I built an AI agent that reads your live codebase and generates accurate sprint tickets automatically — not from templates, from actual code.",
     metrics: [
       { value: "Solo", label: "End-to-End Build" },
       { value: "Daily", label: "Production Use" },
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     subtitle: "Commerce Synchronization at Global Scale",
     category: "E-Commerce / Infrastructure",
     description:
-      "Event-driven microservice platform serving 10,000+ merchant accounts across Shopify, WooCommerce, and social commerce — 99.9% SLA across 3 continents.",
+      "10,000 merchants across 3 continents needed inventory sync that couldn't fail during peak sales. I scaled the infrastructure to 99.9% SLA, cut cloud costs 30%, then led the team of 5 that kept it there.",
     metrics: [
       { value: "10K+", label: "Global Users" },
       { value: "99.9%", label: "Uptime SLA" },

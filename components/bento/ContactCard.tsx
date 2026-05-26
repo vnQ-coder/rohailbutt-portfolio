@@ -31,11 +31,13 @@ export function ContactCard() {
             className="font-display font-bold text-foreground"
             style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", letterSpacing: "-0.02em" }}
           >
-            Let&apos;s build something serious.
+            Building something that needs to ship and scale?
           </h2>
 
-          <p className="text-muted-foreground max-w-[50ch] leading-relaxed text-sm lg:text-base">
-            Available for senior engineering roles, technical consulting, and product contracts.
+          <p className="text-muted-foreground max-w-[52ch] leading-relaxed text-sm lg:text-base">
+            If you&apos;re a fintech company that needs compliant infrastructure, a startup
+            that needs a founding engineer to own the technical side, or a team building AI
+            that actually needs to work in production — that&apos;s exactly where I operate.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center">

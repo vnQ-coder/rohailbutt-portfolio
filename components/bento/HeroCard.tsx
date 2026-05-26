@@ -5,19 +5,20 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const CHIPS = ["Founding Engineer", "Full Stack · AI · Infra", "Remote · Available"];
+const HEADLINE = ["I build systems that", "handle real money", "and real decisions."];
 
 export function HeroCard() {
-  const firstRef = useRef<HTMLSpanElement>(null);
-  const lastRef = useRef<HTMLSpanElement>(null);
+  const line0 = useRef<HTMLSpanElement>(null);
+  const line1 = useRef<HTMLSpanElement>(null);
+  const line2 = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     async function animate() {
       const { gsap } = await import("gsap");
       gsap.fromTo(
-        [firstRef.current, lastRef.current],
+        [line0.current, line1.current, line2.current],
         { yPercent: 110, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1, ease: "power4.out", stagger: 0.08, delay: 0.15 }
+        { yPercent: 0, opacity: 1, duration: 1, ease: "power4.out", stagger: 0.1, delay: 0.15 }
       );
     }
     animate();
@@ -25,7 +26,7 @@ export function HeroCard() {
 
   return (
     <Card className="col-span-12 lg:col-span-8 border-border bg-card relative overflow-hidden min-h-[360px] group">
-      {/* Ambient glow top-right */}
+      {/* Ambient glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute -top-16 -right-16 w-72 h-72 rounded-full opacity-[0.08] blur-3xl"
@@ -42,7 +43,7 @@ export function HeroCard() {
         }}
       />
 
-      <CardContent className="relative z-10 flex flex-col justify-center gap-6 p-8 lg:p-12 h-full">
+      <CardContent className="relative z-10 flex flex-col justify-center gap-5 p-8 lg:p-12 h-full">
         {/* Status pill */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
@@ -50,9 +51,7 @@ export function HeroCard() {
           transition={{ duration: 0.45 }}
           className="flex items-center gap-2 w-fit"
         >
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-widest text-primary"
-          >
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-widest text-primary">
             <span
               className="h-1.5 w-1.5 rounded-full bg-primary"
               style={{ boxShadow: "0 0 8px hsl(161 69% 39%)", animation: "pulse-glow 2s ease-in-out infinite" }}
@@ -61,81 +60,68 @@ export function HeroCard() {
           </span>
         </motion.div>
 
-        {/* Name — word-level clip reveal */}
+        {/* Headline — value prop first, not name */}
         <h1
-          className="font-display font-extrabold leading-[0.88] tracking-[-0.04em]"
-          style={{ fontSize: "clamp(3.2rem, 6.5vw, 6rem)" }}
+          className="font-display font-extrabold leading-[0.92] tracking-[-0.03em]"
+          style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}
         >
-          <span className="block overflow-hidden">
-            <span ref={firstRef} className="block" style={{ opacity: 0 }}>
-              Rohail
-            </span>
-          </span>
-          <span className="block overflow-hidden">
-            <span
-              ref={lastRef}
-              className="block"
-              style={{
-                opacity: 0,
-                background: "linear-gradient(120deg, hsl(160 20% 96%) 30%, hsl(161 69% 45%))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Butt.
-            </span>
-          </span>
-        </h1>
-
-        {/* Role chips */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, duration: 0.4 }}
-          className="flex flex-wrap gap-2"
-        >
-          {CHIPS.map((chip) => (
-            <span
-              key={chip}
-              className="rounded border border-border bg-secondary/60 px-2.5 py-1 font-mono text-[0.65rem] text-muted-foreground tracking-wide"
-            >
-              {chip}
+            {HEADLINE.map((line, i) => (
+            <span key={i} className="block overflow-hidden">
+              <span
+                ref={i === 0 ? line0 : i === 1 ? line1 : line2}
+                className="block"
+                style={{
+                  opacity: 0,
+                  ...(i === HEADLINE.length - 1
+                    ? {
+                        background: "linear-gradient(120deg, hsl(160 20% 96%) 30%, hsl(161 69% 45%))",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }
+                    : {}),
+                }}
+              >
+                {line}
+              </span>
             </span>
           ))}
-        </motion.div>
+        </h1>
 
-        {/* Description */}
+        {/* Name + role — secondary */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.95, duration: 0.5 }}
-          className="max-w-[50ch] text-sm leading-relaxed text-muted-foreground lg:text-base"
+          transition={{ delay: 0.6, duration: 0.4 }}
+          className="font-mono text-muted-foreground text-xs tracking-widest uppercase"
         >
-          6 years turning hard problems into shipped products. Fintech infrastructure at{" "}
-          <span className="text-foreground font-medium">$5M+ monthly</span>. AI agents in production.
-          SaaS platforms at 10K+ users. I own the stack, the architecture, and the outcome.
+          Rohail Butt &mdash; Founding Engineer &middot; 6 years
+        </motion.p>
+
+        {/* Proof statement */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="max-w-[52ch] text-sm leading-relaxed text-muted-foreground lg:text-base"
+        >
+          Fintech at{" "}
+          <span className="text-foreground font-medium">$5M+ monthly</span>. AI agents in
+          production. 3 products shipped from scratch. I own the stack and the outcome.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.4 }}
+          transition={{ delay: 1.0, duration: 0.4 }}
           className="flex flex-wrap gap-3"
         >
-          <Button
-            asChild
-            className="bg-primary text-primary-foreground hover:bg-primary/85 font-semibold px-6"
-          >
+          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/85 font-semibold px-6">
             <a href="#contact">Hire Me →</a>
           </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="border-border text-foreground hover:border-primary/40 hover:bg-primary/5 px-6"
-          >
-            <a href="#projects">View Work ↓</a>
+          <Button asChild variant="outline" className="border-border text-foreground hover:border-primary/40 hover:bg-primary/5 px-6">
+            <a href="#projects">See the Work ↓</a>
           </Button>
         </motion.div>
       </CardContent>
