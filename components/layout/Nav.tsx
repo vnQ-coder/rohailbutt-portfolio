@@ -92,7 +92,7 @@ export function Nav() {
           variant="outline"
           className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold transition-all"
         >
-          <a href="/#contact">Hire Me →</a>
+          <Link href="/#contact">Hire Me →</Link>
         </Button>
       </nav>
     </header>

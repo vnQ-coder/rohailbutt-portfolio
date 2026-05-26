@@ -37,7 +37,7 @@ export function PostNav({ prev, next }: Props) {
         asChild
         className="bg-primary text-primary-foreground hover:bg-primary/85 font-semibold w-fit"
       >
-        <Link href="/#contact">Working on something like this? Let's talk →</Link>
+        <Link href="/#contact">Working on something like this? Let&apos;s talk →</Link>
       </Button>
     </div>
   );

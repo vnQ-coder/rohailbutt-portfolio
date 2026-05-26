@@ -7,6 +7,7 @@ import { FeaturedProjectCard } from "@/components/bento/FeaturedProjectCard";
 import { ProjectCard } from "@/components/bento/ProjectCard";
 import { OwnershipCard } from "@/components/bento/OwnershipCard";
 import { ExperienceCard } from "@/components/bento/ExperienceCard";
+import { WritingCard } from "@/components/writing/WritingCard";
 import { ContactCard } from "@/components/bento/ContactCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects } from "@/lib/projects";
@@ -16,9 +17,9 @@ export default function Home() {
 
   return (
     <BentoGrid>
-      {/* Row 1 — Hero (above fold, no Reveal) + About */}
+      {/* Row 1 — Hero + About */}
       <HeroCard />
-      <Reveal className="col-span-12 lg:col-span-4" delay={0.1}>
+      <Reveal id="about" className="col-span-12 lg:col-span-4" delay={0.1}>
         <AboutCard />
       </Reveal>
 
@@ -52,7 +53,7 @@ export default function Home() {
       </Reveal>
 
       {/* Row 3 — Featured project */}
-      <Reveal className="col-span-12" delay={0}>
+      <Reveal id="projects" className="col-span-12" delay={0}>
         <FeaturedProjectCard project={featured} />
       </Reveal>
 
@@ -63,12 +64,15 @@ export default function Home() {
         </Reveal>
       ))}
 
-      {/* Row 5 — Ownership + Experience */}
-      <Reveal className="col-span-12 lg:col-span-8" delay={0}>
+      {/* Row 5 — Ownership + Experience + Writing */}
+      <Reveal id="work" className="col-span-12 lg:col-span-8" delay={0}>
         <OwnershipCard />
       </Reveal>
       <Reveal className="col-span-12 lg:col-span-4" delay={0.15}>
         <ExperienceCard />
+      </Reveal>
+      <Reveal className="col-span-12 lg:col-span-4" delay={0.2}>
+        <WritingCard />
       </Reveal>
 
       {/* Row 6 — Contact */}
