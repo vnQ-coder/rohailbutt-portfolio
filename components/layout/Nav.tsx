@@ -6,9 +6,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
-  { label: "About", href: "#about", id: "about", section: true },
-  { label: "Work", href: "#work", id: "work", section: true },
-  { label: "Projects", href: "#projects", id: "projects", section: true },
+  { label: "About", href: "/#about", id: "about", section: true },
+  { label: "Work", href: "/#work", id: "work", section: true },
+  { label: "Projects", href: "/#projects", id: "projects", section: true },
   { label: "Writing", href: "/writing", id: "writing", section: false },
 ];
 
@@ -33,6 +33,7 @@ export function Nav() {
       }
       setScrollActive("");
     }
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);

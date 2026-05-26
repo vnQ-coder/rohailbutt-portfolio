@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { posts } from "@/lib/posts";
 
 export function WritingCard() {
-  const latest = posts.slice(0, 3);
+  const latest = [...posts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, 3);
 
   return (
     <Card className="bento-hover border-border bg-card h-full">
