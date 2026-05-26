@@ -7,16 +7,17 @@ export function AboutCard() {
         <p className="font-mono text-primary text-[0.65rem] uppercase tracking-widest">About</p>
         <div className="flex flex-col gap-3">
           <p className="text-foreground text-sm leading-relaxed">
-            I&apos;m a Senior Engineer based in Lahore — I architect distributed systems, ship
-            production AI agents, and launch complete SaaS products.
+            Most engineers need a product manager to tell them what to build. I come with the
+            product sense built in.
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Previously: fintech infrastructure processing $5M+ monthly, event-driven platforms
-            serving 10K+ users across 3 continents, and AI systems that reason autonomously over
-            codebases.
+            I&apos;ve been the only engineer on systems that couldn&apos;t afford to fail, and the
+            tech lead on teams that needed both direction and working code. Fintech compliance,
+            distributed architecture, production AI — shipped all three without a blueprint.
           </p>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            I lead teams and ship solo. Both at the same time if the product demands it.
+            Based in Lahore. Open to senior and founding engineer roles at remote-first companies
+            building something worth the effort.
           </p>
         </div>
       </CardContent>

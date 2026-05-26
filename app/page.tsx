@@ -24,20 +24,20 @@ export default function Home() {
         rawValue={5}
         prefix="$"
         suffix="M+"
-        label="Monthly Txn Volume"
+        label="Fintech · Monthly Volume"
         className="col-span-6 sm:col-span-3"
       />
       <StatCard
         rawValue={10000}
         suffix="+"
-        label="Global Production Users"
+        label="Users · 3 Continents"
         displayValue="10K+"
         className="col-span-6 sm:col-span-3"
       />
       <StatCard
         rawValue={99.9}
         suffix="%"
-        label="Production Uptime SLA"
+        label="Uptime · Production SLA"
         displayValue="99.9%"
         className="col-span-6 sm:col-span-3"
       />
