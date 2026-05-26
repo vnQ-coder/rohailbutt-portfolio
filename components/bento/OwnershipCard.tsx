@@ -17,7 +17,7 @@ const OWNERSHIP = [
 
 export function OwnershipCard() {
   return (
-    <Card id="work" className="bento-hover border-border bg-card h-full">
+    <Card className="bento-hover border-border bg-card h-full">
       <CardContent className="p-6 lg:p-8">
         <p className="font-mono text-primary text-[0.65rem] uppercase tracking-widest mb-6">
           What I Own
