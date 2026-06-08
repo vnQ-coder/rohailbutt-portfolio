@@ -58,19 +58,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-background text-foreground font-sans">
+      <body className="text-foreground font-sans">
         <RainEffect />
-        <ThemeProvider>
-          <LenisProvider>
-            <CustomCursor />
-            <CommandPalette />
-            <KonamiOverlay />
-            <Nav />
-            <main>{children}</main>
-            <Footer />
-            <Toaster />
-          </LenisProvider>
-        </ThemeProvider>
+        <div className="relative z-10">
+          <ThemeProvider>
+            <LenisProvider>
+              <CustomCursor />
+              <CommandPalette />
+              <KonamiOverlay />
+              <Nav />
+              <main>{children}</main>
+              <Footer />
+              <Toaster />
+            </LenisProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
