@@ -3,10 +3,10 @@
 import { useEffect, useRef } from 'react'
 
 const CHARS = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ'
-const FONT_SIZE = 13
-const FADE_FILL = 'rgba(6, 12, 10, 0.13)'
-const LEAD_COLOR = 'rgba(220, 255, 240, 0.9)'
-const CANVAS_OPACITY = 0.055
+const FONT_SIZE = 14
+const FADE_FILL = 'rgba(6, 12, 10, 0.07)'
+const LEAD_COLOR = 'rgba(220, 255, 240, 1)'
+const CANVAS_OPACITY = 0.22
 
 interface Drop {
   y: number
