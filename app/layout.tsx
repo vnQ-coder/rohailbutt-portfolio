@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui-custom/CustomCursor";
 import { CommandPalette } from "@/components/ui-custom/CommandPalette";
 import { KonamiOverlay } from "@/components/ui-custom/KonamiOverlay";
+import { RainEffect } from "@/components/ui-custom/RainEffect";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-background text-foreground font-sans">
+        <RainEffect />
         <ThemeProvider>
           <LenisProvider>
             <CustomCursor />
