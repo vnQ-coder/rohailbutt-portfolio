@@ -84,6 +84,16 @@
   to   { opacity: 0.13; transform: scale(1.25) translate(8px, -8px); }
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.09; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
