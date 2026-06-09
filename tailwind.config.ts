@@ -56,8 +56,6 @@ const config: Config = {
       },
       animation: {
         pulse: "pulse-glow 2s ease-in-out infinite",
-        blink: "blink 1.2s ease-in-out infinite",
-        "glow-pulse": "glow-pulse 4s ease-in-out infinite",
       },
     },
   },

@@ -157,7 +157,7 @@ export function AboutCard() {
         {/* Accessible caption — visible to screen readers and users */}
         <div className="text-center flex flex-col gap-1">
           <p className="text-foreground text-sm font-semibold">
-            Founding Engineer · 6 years
+            Founding Engineer · 6 years · Lahore
           </p>
           <p className="text-muted-foreground text-xs leading-relaxed">
             Open to senior and founding engineer roles at remote-first companies
