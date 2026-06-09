@@ -6,6 +6,7 @@ export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [label, setLabel] = useState("");
   const [expanded, setExpanded] = useState(false);
+  const [active, setActive] = useState(false);
   const mouseX = useRef(0);
   const mouseY = useRef(0);
   const curX = useRef(0);
@@ -19,9 +20,18 @@ export function CustomCursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
+    let hasMoved = false;
+
     function onMove(e: MouseEvent) {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
+      if (!hasMoved) {
+        hasMoved = true;
+        // Appear at the pointer instead of easing in from the corner.
+        curX.current = e.clientX;
+        curY.current = e.clientY;
+        setActive(true);
+      }
     }
 
     function animate() {
@@ -68,6 +78,14 @@ export function CustomCursor() {
     };
   }, []);
 
+  // Suppress the native cursor only while the custom one is rendering, so
+  // users keep a working cursor before hydration or on slow connections.
+  useEffect(() => {
+    if (!active) return;
+    document.documentElement.classList.add("custom-cursor-active");
+    return () => document.documentElement.classList.remove("custom-cursor-active");
+  }, [active]);
+
   return (
     <div
       ref={cursorRef}
@@ -78,6 +96,7 @@ export function CustomCursor() {
         background: expanded ? "transparent" : "hsl(161 69% 39%)",
         border: expanded ? "1.5px solid hsl(161 69% 39%)" : "none",
         willChange: "transform",
+        opacity: active ? 1 : 0,
       }}
     >
       {expanded && label && (

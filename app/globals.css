@@ -74,6 +74,41 @@
   }
 }
 
+/* Entrance animations — pure CSS so content appears even before any JS
+   loads. Base element styles stay fully visible; the hidden "from" state
+   lives only inside the keyframes (fill-mode: both covers the delay). */
+@keyframes hero-line-in {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-line {
+  animation: hero-line-in 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+.hero-fade {
+  animation: hero-fade-in 0.5s ease-out both;
+}
+
+/* Scroll reveals — server HTML is fully visible; .reveal-pending is added
+   by JS after hydration, and only to elements still below the viewport. */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-shown {
+  opacity: 1;
+  transform: none;
+}
+
 @keyframes pulse-glow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.45; }
@@ -99,12 +134,17 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0.01ms !important;
   }
 }
 
+/* Hide the native cursor only once the custom cursor is actually running —
+   .custom-cursor-active is set by CustomCursor after hydration. */
 @media (hover: hover) {
-  * { cursor: none; }
-  a, button { cursor: none; }
+  .custom-cursor-active * { cursor: none; }
+  .custom-cursor-active a,
+  .custom-cursor-active button { cursor: none; }
 }
