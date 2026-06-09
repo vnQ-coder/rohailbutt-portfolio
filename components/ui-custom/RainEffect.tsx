@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react'
 
 const CHARS = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ'
 const FONT_SIZE = 14
-const FADE_FILL = 'rgba(6, 12, 10, 0.12)'
-const LEAD_COLOR = 'rgba(31, 168, 125, 0.75)'
-const CANVAS_OPACITY = 0.18
+const FADE_FILL = 'rgba(6, 12, 10, 0.1)'
+const LEAD_COLOR = 'rgba(0, 220, 110, 0.95)'
+const CANVAS_OPACITY = 0.32
 
 interface Drop {
   y: number
