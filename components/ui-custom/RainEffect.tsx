@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react'
 
 const CHARS = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ'
 const FONT_SIZE = 14
-const FADE_FILL = 'rgba(6, 12, 10, 0.07)'
-const LEAD_COLOR = 'rgba(220, 255, 240, 1)'
-const CANVAS_OPACITY = 0.22
+const FADE_FILL = 'rgba(6, 12, 10, 0.12)'
+const LEAD_COLOR = 'rgba(31, 168, 125, 0.75)'
+const CANVAS_OPACITY = 0.18
 
 interface Drop {
   y: number
@@ -14,7 +14,7 @@ interface Drop {
 }
 
 function randomSpeed(): number {
-  return 0.3 + Math.random() * 0.7
+  return 0.1 + Math.random() * 0.25
 }
 
 function randomChar(): string {
